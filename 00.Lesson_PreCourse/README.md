@@ -3,7 +3,7 @@
 ## Lectures
 Watch the following lectures by Certora's CEO Prof. Mooly Sagiv:
 
-- [ ] "Auditing and Formal Verification - Better together" - [Link](https://youtu.be/VGSsPIsbb6U).
+- [x] "Auditing and Formal Verification - Better together" - [Link](https://youtu.be/VGSsPIsbb6U).
 
 ## Quiz
 
