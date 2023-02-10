@@ -51,7 +51,7 @@ You may, however, choose to work with any other (textual) editor of your choice 
 
 </br>
 
-- [ ] Follow the [BankLesson1](BankLesson1) instructions to learn the basics of operating the Certora Prover.
+- [x] Follow the [BankLesson1](BankLesson1) instructions to learn the basics of operating the Certora Prover.
 
 </br>
 
