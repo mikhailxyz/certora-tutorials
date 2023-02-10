@@ -26,17 +26,17 @@
 
 </br>
 
-- [ ] Fork the [Tutorials](https://github.com/Certora/Tutorials) repository to your github account. </br>
+- [x] Fork the [Tutorials](https://github.com/Certora/Tutorials) repository to your github account. </br>
 You can use the following link as a guide: [Forking Repository On Github](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository). </br>
 Clone your repository to your local machine so you'll have everything you need on your pc.
 
 </br>
 
-- [ ] Make sure to sync the forked repository daily in case any changes and fixes were made to the original repository. Use this link as a guide: [Syncing A Forked Repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository).
+- [x] Make sure to sync the forked repository daily in case any changes and fixes were made to the original repository. Use this link as a guide: [Syncing A Forked Repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository).
 
 </br>
 
-- [ ] Register to our [Discourse Forum](https://forum.certora.com/) and consider to introduce yourself in the [Introduction Thread](https://forum.certora.com/t/introduce-yourself/27/2).
+- [x] Register to our [Discourse Forum](https://forum.certora.com/) and consider to introduce yourself in the [Introduction Thread](https://forum.certora.com/t/introduce-yourself/27/2).
 
 </br>
 
