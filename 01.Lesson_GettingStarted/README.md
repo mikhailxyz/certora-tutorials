@@ -4,7 +4,7 @@
 
 </br>
 
-- [x] Follow the installation instructions for the Certora Prover described in the following link: [Installation of Certora Prover](https://certora.atlassian.net/wiki/spaces/CPD/pages/7274497/Installation+of+Certora+Prover).
+- [x] Follow the installation instructions for the Certora Prover described in the following link: [Installation of Certora Prover](https://docs.certora.com/en/latest/docs/user-guide/getting-started/install.html#).
 
 > :warning: Make sure to download solidity compiler versions 0.8.7, 0.8.0, 0.7.6, 0.7.5 and 0.7.0 for the first 2 lessons of the course. You will need additional solc versions in the future; so whenever a solc error will rise, make sure to have the compiler version that you need on your local machine, located in a directory added to PATH.
 
@@ -27,8 +27,8 @@
 </br>
 
 - [x] Fork the [Tutorials](https://github.com/Certora/Tutorials) repository to your github account. </br>
-You can use the following link as a guide: [Forking Repository On Github](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository). </br>
-Clone your repository to your local machine so you'll have everything you need on your pc.
+      You can use the following link as a guide: [Forking Repository On Github](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository). </br>
+      Clone your repository to your local machine so you'll have everything you need on your pc.
 
 </br>
 
@@ -47,7 +47,7 @@ Clone your repository to your local machine so you'll have everything you need o
 </br>
 
 > :information_source: The Certora team's recommends using VSCode as your main editor for writing specifications and browsing through contracts during the course. As part of the everyday work, you'll need convenient access to terminal, .spec editor - preferably with SLP extension, and a solidity editor - preferably with extension that has adequate support for reading and writing solidity code.
-You may, however, choose to work with any other (textual) editor of your choice or split the work between several editors, just know that the SLP is currently only supported through VSCode.
+> You may, however, choose to work with any other (textual) editor of your choice or split the work between several editors, just know that the SLP is currently only supported through VSCode.
 
 </br>
 
@@ -87,6 +87,16 @@ For that reason we often write a shell scripts of the run command that includes 
 </br>
 
 - [ ] Continue to next lesson: [Investigate Violations](../02.Lesson_InvestigateViolations) to exercise some more script writing and the art of understanding violations.
+
+</br>
+
+---
+
+## Solutions to the lessons
+
+</br>
+
+- [ ] Some of the lessons in the Tutorials require you to write a `.spec` file containing your own rules for a given contract. Sometimes this can be quite challenging and if you get in trouble, you can have a look at the [Solutions](https://github.com/Certora/Tutorials/tree/master/Solutions) folder in the repository.
 
 </br>
 
