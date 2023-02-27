@@ -55,7 +55,7 @@
 
 </br>
 
-- [ ] Watch a lecture presented to the Opyn team by Dr. James Wilcox - [Link](https://youtu.be/YObi6qoyo_E). The lecture goes over the same examples from BankLesson1, explaining core concepts with more details.
+- [x] Watch a lecture presented to the Opyn team by Dr. James Wilcox - [Link](https://youtu.be/YObi6qoyo_E). The lecture goes over the same examples from BankLesson1, explaining core concepts with more details.
 
 </br>
 
