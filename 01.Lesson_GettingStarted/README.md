@@ -76,7 +76,7 @@ For that reason we often write a shell scripts of the run command that includes 
 
 </br>
 
-- [ ] Follow the instructions on [RunScriptExample](RunScriptExample) to learn how to write run scripts, and how to execute the prover using scripts.
+- [x] Follow the instructions on [RunScriptExample](RunScriptExample) to learn how to write run scripts, and how to execute the prover using scripts.
 
 </br>
 
@@ -86,7 +86,7 @@ For that reason we often write a shell scripts of the run command that includes 
 
 </br>
 
-- [ ] Continue to next lesson: [Investigate Violations](../02.Lesson_InvestigateViolations) to exercise some more script writing and the art of understanding violations.
+- [x] Continue to next lesson: [Investigate Violations](../02.Lesson_InvestigateViolations) to exercise some more script writing and the art of understanding violations.
 
 </br>
 
@@ -96,7 +96,7 @@ For that reason we often write a shell scripts of the run command that includes 
 
 </br>
 
-- [ ] Some of the lessons in the Tutorials require you to write a `.spec` file containing your own rules for a given contract. Sometimes this can be quite challenging and if you get in trouble, you can have a look at the [Solutions](https://github.com/Certora/Tutorials/tree/master/Solutions) folder in the repository.
+- [x] Some of the lessons in the Tutorials require you to write a `.spec` file containing your own rules for a given contract. Sometimes this can be quite challenging and if you get in trouble, you can have a look at the [Solutions](https://github.com/Certora/Tutorials/tree/master/Solutions) folder in the repository.
 
 </br>
 
