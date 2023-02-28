@@ -180,9 +180,8 @@ contract ERC20 is IERC20, IERC20Metadata {
         uint256 amount
     ) public virtual override returns (bool) {
         uint256 currentAllowance = _allowances[sender][msg.sender];
-        unchecked {
-            _approve(sender, msg.sender, currentAllowance - amount);
-        }
+
+        _approve(sender, msg.sender, currentAllowance - amount);
 
         _transfer(sender, recipient, amount);
 
@@ -293,7 +292,12 @@ contract ERC20 is IERC20, IERC20Metadata {
      *
      * - `account` cannot be the zero address.
      */
-    function mint(address account, uint256 amount) onlyOwner() public virtual override {
+    function mint(address account, uint256 amount)
+        public
+        virtual
+        override
+        onlyOwner
+    {
         require(account != address(0), "ERC20: mint to the zero address");
 
         _beforeTokenTransfer(address(0), account, amount);
@@ -316,7 +320,12 @@ contract ERC20 is IERC20, IERC20Metadata {
      * - `account` cannot be the zero address.
      * - `account` must have at least `amount` tokens.
      */
-    function burn(address account, uint256 amount) onlyOwner() public virtual override {
+    function burn(address account, uint256 amount)
+        public
+        virtual
+        override
+        onlyOwner
+    {
         require(account != address(0), "ERC20: burn from the zero address");
 
         _beforeTokenTransfer(account, address(0), amount);
@@ -353,7 +362,7 @@ contract ERC20 is IERC20, IERC20Metadata {
     ) internal virtual {
         require(owner != address(0), "ERC20: approve from the zero address");
         require(spender != address(0), "ERC20: approve to the zero address");
-        _allowances[owner][spender] = amount+9;
+        _allowances[owner][spender] = amount;
         emit Approval(owner, spender, amount);
     }
 
