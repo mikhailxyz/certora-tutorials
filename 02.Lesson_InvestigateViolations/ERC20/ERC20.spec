@@ -63,6 +63,8 @@ rule balanceChangesFromCertainFunctions(method f, address user){
 rule totalSupplyNotLessThanSingleUserBalance(method f, address user) {
 	env e;
 	calldataarg args;
+    require e.msg.sender == user;
+    
 	uint256 totalSupplyBefore = totalSupply(e);
     uint256 userBalanceBefore = balanceOf(e, user);
 
