@@ -13,74 +13,80 @@ The bugs are relatively simple and can be probably found by eye quite easily. Tr
 Throughout each README file within this directory and its sub directories, we shall add tips and hints in collapsables to supply assistant without forcing you to take it. You will have to click on the tip actively to see it.
 
 > :bulb:
+>
 > <details>
 >  <summary>An Expandable Tip</summary>
 >  Always tip your waiters and waitresses.
-></details>
+> </details>
 
 </br>
 For each of the systems in this directory do as follows:
 
 </br>
 
-- [ ] Open the interface and read the documentation and functions' signatures. The comments should get you clear on how the system should operate without going into implementation details.
+- [x] Open the interface and read the documentation and functions' signatures. The comments should get you clear on how the system should operate without going into implementation details.
 
 </br>
 
-- [ ] Open the spec file and go over the rules and comments there. Try to understand what the rule tries to capture and make sure that you understand this property. Look at the implementation of the rules and see if the code is clear to you.
+- [x] Open the spec file and go over the rules and comments there. Try to understand what the rule tries to capture and make sure that you understand this property. Look at the implementation of the rules and see if the code is clear to you.
 
 > Make sure to read the comments at the top that explains about some new concepts that are used in the code.
 
 </br>
 
-- [ ] Create a script (or multiple scripts) that will serve you for running the verifications of the system's buggy versions.
+- [x] Create a script (or multiple scripts) that will serve you for running the verifications of the system's buggy versions.
 
 > :bulb:
+>
 > <details>
 >  <summary>Script Hint</summary>
 >  Craft your script wisely - use the `--rule` to filter out information that isn't of your interest.
-></details>
+> </details>
 
 </br>
 
-- [ ] Run verifications of the contracts to find violations to the rules.
+- [x] Run verifications of the contracts to find violations to the rules.
 
 > :bulb:
+>
 > <details>
 >  <summary>Best Practice</summary>
 >  First run the <b>entire spec</b> file against the contract you are investigating. This way you'll see which rules you need to focus on. Later you can specify a specific rule to run the contract against to save run time.
-></details>
+> </details>
 
 </br>
 
-- [ ] Follow the violations as explained in [BankLesson1](../01.Lesson_GettingStarted/BankLesson1) to find out the source of the bugs.
+- [x] Follow the violations as explained in [BankLesson1](../01.Lesson_GettingStarted/BankLesson1) to find out the source of the bugs.
 
-- [ ] Fix the causes of the violations and check that the rules are really passing (green thumb up). **Be sure not to weaken the rules.**
+- [x] Fix the causes of the violations and check that the rules are really passing (green thumb up). **Be sure not to weaken the rules.**
 
-- [ ] Save your solution to each bug in the same file that you found it in, next to the changed line(s). Mark your findings by adding a comment explaining the fix in 1-2 sentences in the following format: //@note the require checked `a > b`, when it should've checked `b > a`.
+- [x] Save your solution to each bug in the same file that you found it in, next to the changed line(s). Mark your findings by adding a comment explaining the fix in 1-2 sentences in the following format: //@note the require checked `a > b`, when it should've checked `b > a`.
 
 > :bulb:
+>
 > <details>
 >  <summary>General Direction</summary>
 >  Most of the bugs are in the solidity contracts, i.e. the rules are passing correctly on the "fixed version" of the code that was corrupted for this exercise.
 > However, in a few specific cases, the specifications were tempered with, i.e. the rules will fail on the "fixed version" as well.
-></details>
+> </details>
 
 </br>
 
 > :bulb:
+>
 > <details>
 >  <summary>General Tip 1</summary>
 > In the spec file - Try assigning variables instead of having direct function calls in expressions. By assigning variables the call trace becomes clearer and the variables' section volunteers more information.
-></details>
+> </details>
 
 </br>
 
 > :bulb:
+>
 > <details>
 >  <summary>General Tip 2</summary>
 > In the spec file - Try breaking complex expressions to achieve code readability and a more simplified call trace.
-></details>
+> </details>
 
 </br>
 
@@ -90,7 +96,7 @@ For each of the systems in this directory do as follows:
 
 </br>
 
-- [ ] Continue to next lesson: [SMT](../03.Lesson_SMT) to learn about the underlying mechanism of the Certora Prover.
+- [x] Continue to next lesson: [SMT](../03.Lesson_SMT) to learn about the underlying mechanism of the Certora Prover.
 
 </br>
 

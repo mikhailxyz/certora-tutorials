@@ -3,7 +3,8 @@
 certoraRun ./"$1".sol:MeetingScheduler --verify MeetingScheduler:./meetings.spec \
   --solc solc8.19 \
   --optimistic_loop \
-  --msg "$1"
+  --msg "$1" \
+  --send_only
 
 # At the end of each line a backsalsh (\) is used for line continuation - to split overly long lines.
 # more on backslash before new line here: https://superuser.com/questions/794963/in-a-linux-shell-why-does-backslash-newline-not-introduce-whitespace#:~:text=The%20Backslash%2Dnewline%20is%20used,purposes%20of%20executing%20the%20script.

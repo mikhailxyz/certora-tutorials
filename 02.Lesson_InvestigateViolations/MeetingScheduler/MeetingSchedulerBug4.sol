@@ -3,7 +3,6 @@ pragma solidity ^0.8.7;
 import "./IMeetingScheduler.sol";
 
 contract MeetingScheduler is IMeetingScheduler {
-
     mapping(uint256 => ScheduledMeeting) private meetings;
 
     function getStateById(uint256 meetingId)
@@ -56,9 +55,11 @@ contract MeetingScheduler is IMeetingScheduler {
         uint256 startTime,
         uint256 endTime
     ) external override {
+        ScheduledMeeting storage meeting = meetings[meetingId];
         require(
-            meetings[meetingId].status == MeetingStatus.UNINITIALIZED,
-            "meeting has already been scheduled"
+            meeting.status == MeetingStatus.UNINITIALIZED &&
+                meeting.numOfParticipants == 0,
+            "meeting has already been scheduled or started"
         );
         require(
             startTime > block.timestamp,
@@ -93,8 +94,9 @@ contract MeetingScheduler is IMeetingScheduler {
 
     function cancelMeeting(uint256 meetingId) external override {
         ScheduledMeeting memory scheduledMeeting = meetings[meetingId];
-        require(msg.sender == scheduledMeeting.organizer,
-                "only the organizer of a meeting can cancel it"
+        require(
+            msg.sender == scheduledMeeting.organizer,
+            "only the organizer of a meeting can cancel it"
         );
         require(
             scheduledMeeting.status == MeetingStatus.PENDING,
@@ -124,6 +126,5 @@ contract MeetingScheduler is IMeetingScheduler {
             "can only join to a meeting that has started"
         );
         meetings[meetingId].numOfParticipants++;
-        meetings[meetingId].status = MeetingStatus.ENDED;
     }
 }
