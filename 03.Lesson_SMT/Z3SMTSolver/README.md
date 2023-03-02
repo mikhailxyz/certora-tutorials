@@ -1,7 +1,7 @@
 # Exercise Z3
 
 - [ ] Follow the [Z3 Playground](https://jfmc.github.io/z3-play/) up to Bitvectors (don't read Bitvectors).
-      Currently at "Propositional Logic".
+      Currently at "Satisfiability and Validity".
 
 > :warning: Some browsers might not run the playground properly. Safari is a browser we know doesn't work well. Chrome, Chromium, Firefox, and Brave browsers have been tested to work fine.
 
