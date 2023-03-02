@@ -55,7 +55,12 @@
 
 </br>
 
-- [x] Watch a lecture presented to the Opyn team by Dr. James Wilcox - [Link](https://youtu.be/YObi6qoyo_E). The lecture goes over the same examples from BankLesson1, explaining core concepts with more details.
+- [x] # Watch a lecture presented to the Opyn team by Dr. James Wilcox - [Link](https://youtu.be/YObi6qoyo_E). The lecture goes over the same examples from BankLesson1, explaining core concepts with more details.
+- [ ] Follow the [ERC20Lesson1](ERC20Lesson1) instructions to learn the basics of operating the Certora Prover.
+
+</br>
+
+- [ ] Watch a lecture presented at Stanford Aug 2022 team by Dr. Michael George - [Link](https://www.youtube.com/watch?v=siEDkMNbl5o). The lecture goes over the same examples from ERC20, explaining core concepts in more detail.
 
 </br>
 
@@ -65,14 +70,14 @@
 
 </br>
 
-Writing the `certoraRun` command in terminal every time we want to execute a run can be tiresome and uneasy on the eyes. Moreover, since a typical run of a single rule in real-life systems takes minutes to finish, we often work on 2 rules in parallel.
+Writing the `certoraRun` command in a terminal every time we want to execute a run can be tiresome and uneasy on the eyes. Moreover, since a typical run of a single rule in real-life systems takes minutes to finish, we often work on 2 rules in parallel.
 
-For that reason we often write a shell scripts of the run command that includes all the settings and options we need for a run. There are 4 advantages for using a script:
+For that reason, we often write a shell script of the run command that includes all the settings and options we need for a run. There are 4 advantages for using a script:
 
 1. It is easier to read and sometimes can be more friendly to edit.
-2. It can save a large chunk of code that's stored in a known place, as oppose to a terminal command that can be pushed down the stack and disappear after intense use of the terminal.
-3. It can be uploaded to git or sent along with the specifications for others to use, instead of forcing them writing the command
-4. It allows a more advance execution of run commands, e.g. running the exact same rule on every contract in a given directory (we will talk about sanity rule in the future).
+2. It can save a large chunk of code that's stored in a known place, as opposed to a terminal command that can be pushed down the stack and disappear after intense use of the terminal.
+3. It can be uploaded to git or sent along with the specifications for others to use, instead of forcing them to write the command
+4. It allows a more advanced execution of run commands, e.g. running the exact same rule on every contract in a given directory (we will talk about sanity rule in the future).
 
 </br>
 
@@ -86,7 +91,7 @@ For that reason we often write a shell scripts of the run command that includes 
 
 </br>
 
-- [x] Continue to next lesson: [Investigate Violations](../02.Lesson_InvestigateViolations) to exercise some more script writing and the art of understanding violations.
+- [x] # Continue to next lesson: [Investigate Violations](../02.Lesson_InvestigateViolations) to exercise some more script writing and the art of understanding violations.
 
 </br>
 
@@ -102,6 +107,6 @@ For that reason we often write a shell scripts of the run command that includes 
 
 ---
 
-### Hurray! You've completed you first step towards being a security engineer
+### Hurray! You've completed your first step toward being a security engineer
 
 ---
