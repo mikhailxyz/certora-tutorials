@@ -11,7 +11,7 @@ It comes in handy to have a general notion of how the Certora Prover handles our
 
 </br>
 
-- [ ] Follow the [Z3SMTSolver](Z3SMTSolver) instructions.
+- [x] Follow the [Z3SMTSolver](Z3SMTSolver) instructions.
 
 </br>
 
