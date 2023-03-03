@@ -3,18 +3,17 @@
 </br>
 
 - [ ] Go over the following sources of free and public information to learn how to think of systems as state machines:
-    
-  - [ ] Part of a lecture explaining the idea of state machines[^1]. Watch the video from 48:58 to 1:02:45 - [Link](https://youtu.be/cQntMUMQyRw?t=2938)
 
-  - [ ] A recitation on state machines for the same course[^1] - [Link](https://youtu.be/8FWfmvj3HYw).
+  - [x] Part of a lecture explaining the idea of state machines[^1]. Watch the video from 48:58 to 1:02:45 - [Link](https://youtu.be/cQntMUMQyRw?t=2938)
 
-  - [ ] A short written explanation on state machines - [Link](https://www.cs.cornell.edu/courses/cs211/2006sp/Lectures/L26-MoreGraphs/state_mach.html)
+  - [x] A recitation on state machines for the same course[^1] - [Link](https://youtu.be/8FWfmvj3HYw).
+
+  - [x] A short written explanation on state machines - [Link](https://www.cs.cornell.edu/courses/cs211/2006sp/Lectures/L26-MoreGraphs/state_mach.html)
 
 > :memo: If you feel you need some more explanations of the subject you can search the web for many additional great and free sources.
 
- [^1]: The content was created for the course *Introduction to Electrical Engineering and Computer Science* for MIT University ([OCW](https://ocw.mit.edu/)).
-
- [^2]: Notes created by Prof. Andrew Myers from Cornell University for the course *CS 211*.
+[^1]: The content was created for the course _Introduction to Electrical Engineering and Computer Science_ for MIT University ([OCW](https://ocw.mit.edu/)).
+[^2]: Notes created by Prof. Andrew Myers from Cornell University for the course _CS 211_.
 
 </br>
 
