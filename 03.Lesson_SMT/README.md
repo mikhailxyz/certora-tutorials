@@ -15,7 +15,7 @@ It comes in handy to have a general notion of how the Certora Prover handles our
 
 </br>
 
-- [ ] Watch a lecture by Prof. Mooly Sagiv, founder of Certora, on satisfiability problem (SAT) and the underlying mechanism of SMT solvers - [Link](https://youtu.be/9kKA4uBRqVo?t=1848).
+- [x] Watch a lecture by Prof. Mooly Sagiv, founder of Certora, on satisfiability problem (SAT) and the underlying mechanism of SMT solvers - [Link](https://youtu.be/9kKA4uBRqVo?t=1848).
 
 </br>
 
@@ -25,7 +25,7 @@ It comes in handy to have a general notion of how the Certora Prover handles our
 
 </br>
 
-- [ ] Continue to next lesson: [Declarations](../04.Lesson_Declarations) to learn about method declarations, definitions, and functions in CVL.
+- [x] Continue to next lesson: [Declarations](../04.Lesson_Declarations) to learn about method declarations, definitions, and functions in CVL.
 
 </br>
 
