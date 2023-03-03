@@ -60,7 +60,7 @@
 
 </br>
 
-- [ ] Watch a lecture presented at Stanford Aug 2022 team by Dr. Michael George - [Link](https://www.youtube.com/watch?v=siEDkMNbl5o). The lecture goes over the same examples from ERC20, explaining core concepts in more detail.
+- [x] Watch a lecture presented at Stanford Aug 2022 team by Dr. Michael George - [Link](https://www.youtube.com/watch?v=siEDkMNbl5o). The lecture goes over the same examples from ERC20, explaining core concepts in more detail.
 
 </br>
 

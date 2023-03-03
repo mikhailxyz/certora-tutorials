@@ -1,3 +1,17 @@
+methods {
+    // getFunds implementation does not require any context to get successfully executed
+    getFunds(address) returns (uint256) envfree
+    // deposit's implementation uses msg.sender, info that's encapsulated in the environment
+    // so does withdraw and transfer
+    deposit(uint256)
+    widthdraw() returns (bool)
+    transfer(address, uint256)
+    // getTotalFunds implementation does not require any context to get successfully executed
+    getTotalFunds() returns (uint256) envfree
+    // getEthBalance implementation does not require any context to get successfully executed
+    getEthBalance(address) returns (uint256) envfree
+}
+
 function preFunctionCall(env e) returns bool {
     uint256 userFunds = getFunds(e, e.msg.sender);
 	uint256 total = getTotalFunds(e);

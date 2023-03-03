@@ -4,7 +4,7 @@
 
 </br>
 
-In CVL, you can call `external` and `public` methods from the verified contract (or other contracts in the verification context) as they are automatically declared. The default declaration assumes that the methods require the calling context (`env`) to work properly and urges you to send it as an argument. 
+In CVL, you can call `external` and `public` methods from the verified contract (or other contracts in the verification context) as they are automatically declared. The default declaration assumes that the methods require the calling context (`env`) to work properly and urges you to send it as an argument.
 
 > :information_source: You can see that every function call in Lesson 1 included an `env` argument. If we had removed the `env` argument from the function call, an error would've risen in the local type-checking phase.
 
@@ -19,19 +19,19 @@ However, the calling context (sender, value, timestamp, block number, etc.) is n
 There is no need for any Ethereum-frame context to retrieve the funds of a specified HEX address from the system.
 For these cases, one can create a `methods` block and explicitly declare the functions they will use in the spec. The declaration is similar to a function declaration in a Solidity interface. At the end of the declaration, one can specify the function as `envfree`, meaning it does not depend on the context, so no `env` variable should be expected in the function call. If `envfree` isn't specified at the end, the function will require an `env` argument (equivalent to not declaring it).
 
-- [ ] Have a look at the methods block in the altered, yet familiar spec from Lesson 1 - IntegrityOfDeposit: [BankFixed.sol](LessonExamples/BankFixed.sol) and [Methods_IntegrityOfDeposit.spec](LessonExamples/Methods_IntegrityOfDeposit.spec)
+- [x] Have a look at the methods block in the altered, yet familiar spec from Lesson 1 - IntegrityOfDeposit: [BankFixed.sol](LessonExamples/BankFixed.sol) and [Methods_IntegrityOfDeposit.spec](LessonExamples/Methods_IntegrityOfDeposit.spec)
 
 In general, creating an arbitrary `env` variable and passing it to the function call does not affect verification results. Still, we recommend declaring functions as `envfree` whenever possible to write cleaner and less confusing code.
 
-Another reason to declare functions, even if they aren't `envfree`, is to make the specification more self-contained and readable. 
+Another reason to declare functions, even if they aren't `envfree`, is to make the specification more self-contained and readable.
 
-- [ ] Read the documentation on [method declarations](https://docs.certora.com/en/latest/docs/confluence/advanced/methods.html), especially subsections [Entries in the methods block](https://docs.certora.com/en/latest/docs/cvl/methods.html?highlight=methods#entries-in-the-methods-block) and [Which function calls are summarized](https://docs.certora.com/en/latest/docs/cvl/methods.html?highlight=methods#which-function-calls-are-summarized). Do not continue reading the "Summary Types" subsection. Notice that the documentation refers to things that we haven't learned yet. Don't worry; we will get to it in the future.
+- [x] Read the documentation on [method declarations](https://docs.certora.com/en/latest/docs/confluence/advanced/methods.html), especially subsections [Entries in the methods block](https://docs.certora.com/en/latest/docs/cvl/methods.html?highlight=methods#entries-in-the-methods-block) and [Which function calls are summarized](https://docs.certora.com/en/latest/docs/cvl/methods.html?highlight=methods#which-function-calls-are-summarized). Do not continue reading the "Summary Types" subsection. Notice that the documentation refers to things that we haven't learned yet. Don't worry; we will get to it in the future.
 
 This directory contains the three systems from the Lesson 1 Exercise. The interface implementations are the fixed versions (all the rules pass on them out of the box).
 
-- [ ] Write a methods block for each spec and declare as `envfree` every possible function.
+- [x] Write a methods block for each spec and declare as `envfree` every possible function.
 
-- [ ] Run the verification to make sure that your declarations work. You should get a verification report where all rules are passing.
+- [x] Run the verification to make sure that your declarations work. You should get a verification report where all rules are passing.
 
 </br>
 
@@ -51,11 +51,12 @@ These are plain, simple, and perhaps even silly examples of CVL functions that o
 
 - [ ] Write CVL functions in [Borda Election](Borda) that takes a voter as argument and retrieves just one element from the struct, i.e. age, registered, voted, etc.
 
-> :bulb: 
+> :bulb:
+>
 > <details>
 >  <summary>Hint</summary>
 > Look at the use of `getFullVoterDetails` in `onceBlackListedNotOut`. you can export this assignment to a CVL function that will retrieve a single element that you need.
-></details>
+> </details>
 
 - [ ] Have a look at the other systems to see if you can find another place where CVL functions can come in handy.
 
@@ -67,14 +68,14 @@ These are plain, simple, and perhaps even silly examples of CVL functions that o
 
 </br>
 
-Definitions are [macros](https://en.wikipedia.org/wiki/Macro_(computer_science)) that we can declare at the top-level of a specification. These macros are available in the scope of every rule, function, and other definitions.
+Definitions are [macros](<https://en.wikipedia.org/wiki/Macro_(computer_science)>) that we can declare at the top-level of a specification. These macros are available in the scope of every rule, function, and other definitions.
 Definitions are usually used for one of 2 purposes:
 
 1. Declaring a constant. For example, the speed of light is `299,792,458 m/sec`. It can be declared globally as follows:
 
 ```
 definition C() returns uint256 = 299792458;
-``` 
+```
 
 </br>
 

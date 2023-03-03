@@ -1,9 +1,8 @@
-methods{
+methods {
     // getFunds implementation does not require any context to get successfully executed
     getFunds(address) returns (uint256) envfree
     // deposit's implementation uses msg.sender, info that's encapsulated in the environment
     deposit(uint256)
-
 }
 
 
