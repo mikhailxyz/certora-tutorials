@@ -43,13 +43,13 @@ This directory contains the three systems from the Lesson 1 Exercise. The interf
 
 Like any other programming language, CVL provides a way to encapsulate code in functions for convenient code reuse.
 
-- [ ] Read the documentation on [CVL functions](https://docs.certora.com/en/latest/docs/confluence/anatomy/functions.html#cvl-functions).
+- [x] Read the documentation on [CVL functions](https://docs.certora.com/en/latest/docs/confluence/anatomy/functions.html#cvl-functions).
 
-- [ ] Have a look at the CVL functions in the altered, yet familiar spec from Lesson 1 - `TotalGreaterThenUser`: [BankFixed.sol](LessonExamples/BankFixed.sol) and [Functions_TotalGreaterThenUser.spec](LessonExamples/Functions_TotalGreaterThenUser.spec)
+- [x] Have a look at the CVL functions in the altered, yet familiar spec from Lesson 1 - `TotalGreaterThenUser`: [BankFixed.sol](LessonExamples/BankFixed.sol) and [Functions_TotalGreaterThenUser.spec](LessonExamples/Functions_TotalGreaterThenUser.spec)
 
 These are plain, simple, and perhaps even silly examples of CVL functions that one may not implement in a real specification. Keep in mind that these examples are simply there to get you going on features of the CVL and their syntax. You will write more useful functions soon enough.
 
-- [ ] Write CVL functions in [Borda Election](Borda) that takes a voter as argument and retrieves just one element from the struct, i.e. age, registered, voted, etc.
+- [x] Write CVL functions in [Borda Election](Borda) that takes a voter as argument and retrieves just one element from the struct, i.e. age, registered, voted, etc.
 
 > :bulb:
 >
@@ -58,9 +58,9 @@ These are plain, simple, and perhaps even silly examples of CVL functions that o
 > Look at the use of `getFullVoterDetails` in `onceBlackListedNotOut`. you can export this assignment to a CVL function that will retrieve a single element that you need.
 > </details>
 
-- [ ] Have a look at the other systems to see if you can find another place where CVL functions can come in handy.
+- [x] Have a look at the other systems to see if you can find another place where CVL functions can come in handy.
 
-- [ ] Run the verification to make sure that your declaration works. You should get a verification report where all rules pass.
+- [x] Run the verification to make sure that your declaration works. You should get a verification report where all rules pass.
 
 ---
 

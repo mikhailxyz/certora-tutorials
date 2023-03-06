@@ -10,6 +10,18 @@ methods {
     vote(address, address, address) returns (bool);
 }
 
+function getBlockedFlag(address voter) returns bool {
+    uint8 age; bool voterRegBefore; bool voted; uint256 vote_attempts; bool blocked;
+    age, voterRegBefore, voted, vote_attempts, blocked = getFullVoterDetails(voter);
+    return blocked;
+}
+
+function getRegisteredBeforeFlag(address voter) returns bool {
+    uint8 age; bool voterRegBefore; bool voted; uint256 vote_attempts; bool blocked;
+    age, voterRegBefore, voted, vote_attempts, blocked = getFullVoterDetails(voter);
+    return voterRegBefore;
+}
+
 // Checks that a voter's "registered" mark is changed correctly - 
 // If it's false after a function call, it was false before
 // If it's true after a function call, it either started as true or changed from false to true via registerVoter()
@@ -48,12 +60,14 @@ rule correctPointsIncreaseToContenders(address first, address second, address th
 // Checks that a blocked voter cannot get unlisted
 rule onceBlockedNotOut(method f, address voter){
     env e; calldataarg args;
-    uint256 age; bool registeredBefore; bool voted; uint256 vote_attempts; bool blocked_before;
-    age, registeredBefore, voted, vote_attempts, blocked_before = getFullVoterDetails(voter);
-    require blocked_before => registeredBefore;
+
+    bool blocked_before; bool registered_before;
+    registered_before = getRegisteredBeforeFlag(voter);
+    blocked_before = getBlockedFlag(voter);
+    require blocked_before => registered_before;
     f(e, args);
-    bool registeredAfter; bool blocked_after;
-    age, registeredAfter, voted, vote_attempts, blocked_after = getFullVoterDetails(voter);
+    bool blocked_after;
+    blocked_after = getBlockedFlag(voter);
     
     assert blocked_before => blocked_after, "the specified user got out of the blocked users' list";
 }
