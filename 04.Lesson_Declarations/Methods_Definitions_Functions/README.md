@@ -85,19 +85,19 @@ definition C() returns uint256 = 299792458;
 definition meetingUninitialized(uint256 meetingId) returns bool = getStartTimeById(meetingId) == 0 && getEndTimeById(meetingId) == 0 && ...;
 ```
 
-- [ ] Read the documentation on [definitions](https://docs.certora.com/en/latest/docs/confluence/anatomy/definitions.html) up to "Reference Ghost Functions" (not including).
+- [x] Read the documentation on [definitions](https://docs.certora.com/en/latest/docs/confluence/anatomy/definitions.html) up to "Reference Ghost Functions" (not including).
 
-- [ ] Write the definitions of all the states in the [MeetingScheduler](MeetingScheduler) system.
+- [x] Write the definitions of all the states in the [MeetingScheduler](MeetingScheduler) system.
 
-- [ ] Try writing a few definitions for a voter in [Borda](Borda) contract:
+- [x] Try writing a few definitions for a voter in [Borda](Borda) contract:
 
 1. `unRegisteredVoter` - for a voter that isn't registered at all.
 2. `registeredYetVotedVoter` - for a registered voter that hasn't voted yet.
 3. `legitRegisteredVotedVoter` - for a registered voter that has voted but isn't blocked.
 4. `blockedVoter` - for a registered voter that has voted, and is blocked.
 
-- [ ] Use the CVL function for that task.
+- [x] Use the CVL function for that task.
 
-- [ ] Have another look at the other systems and think if you can create useful definitions for them.
+- [x] Have another look at the other systems and think if you can create useful definitions for them.
 
-- [ ] Run the verification to make sure that your declarations work. You should get a verification report where all rules pass.
+- [x] Run the verification to make sure that your declarations work. You should get a verification report where all rules pass.
