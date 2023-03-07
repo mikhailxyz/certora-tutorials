@@ -12,16 +12,16 @@ This set of requirements is called [specification](https://en.wikipedia.org/wiki
 The recommended way to create a specification file is to first express each system requirement in your preferred language (english/pseudo code), then try to reason about it, refine it, and even express it in a more precise mathematical/logic language.
 Obviously, you can go straight away to write the property in mathematical form. However, it isn't always a simple task so when you have a hard time formulating a logical expression, go back to defining it in free language.
 
-Although this step may seem obvious or cumbersome, 
-we cannot stress enough how important it is. 
-Coming up with meaningful properties is the most challenging part of the work. 
-Without the ability to identify and express meaningful properties, 
-all your technical knowledge with the tool is worthless. 
+Although this step may seem obvious or cumbersome,
+we cannot stress enough how important it is.
+Coming up with meaningful properties is the most challenging part of the work.
+Without the ability to identify and express meaningful properties,
+all your technical knowledge with the tool is worthless.
 Even the most skillful security engineer will contribute nothing to a system's security if:
 
 1. The property they try to prove is wrong (will never be proved and show unhelpful counter examples).
 
-2. The property they are proving is very local and has partial coverage. In this case, many potential bugs will not be detected with this property. 
+2. The property they are proving is very local and has partial coverage. In this case, many potential bugs will not be detected with this property.
 
 3. The property is already covered by another property
 
@@ -30,13 +30,13 @@ Even the most skillful security engineer will contribute nothing to a system's s
 The process of coming up with properties and rules ideas is not done once you start the verification.
 You will find out that it is an iterative process. While writing rules, you will better understand the system through violations of your properties and discover more rules and invariants that you can and need to define in the specification.
 
-- [ ] Go through the presentation [Categorizing Properties](Categorizing_Properties.pdf) to learn about different classes of properties that can be found in real-life systems.
+- [x] Go through the presentation [Categorizing Properties](Categorizing_Properties.pdf) to learn about different classes of properties that can be found in real-life systems.
 
-- [ ] Watch the talk [From High-Level DeFi Properties to Concrete Security Bugs](https://www.youtube.com/watch?v=L0xWOH0pCOQ&list=PL5r4vTR0gHj4hpWSe2w6593AZnc5iwmVt&index=30) ](https://www.youtube.com/watch?v=L0xWOH0pCOQ&list=PL5r4vTR0gHj4hpWSe2w6593AZnc5iwmVt&index=30) or go through the [presentation](https://drive.google.com/file/d/1d1XUW9Nu1cc2ZER6FWSvr7uAXMQqiRpW/view) to learn about which types of bugs can be uncovered by which type of rules.
+- [x] Watch the talk [From High-Level DeFi Properties to Concrete Security Bugs](https://www.youtube.com/watch?v=L0xWOH0pCOQ&list=PL5r4vTR0gHj4hpWSe2w6593AZnc5iwmVt&index=30) ](https://www.youtube.com/watch?v=L0xWOH0pCOQ&list=PL5r4vTR0gHj4hpWSe2w6593AZnc5iwmVt&index=30) or go through the [presentation](https://drive.google.com/file/d/1d1XUW9Nu1cc2ZER6FWSvr7uAXMQqiRpW/view) to learn about which types of bugs can be uncovered by which type of rules.
 
 </br>
 
-- [ ] Follow the instructions in [AuctionDemonstration](AuctionDemonstration) to have a guided exercise with a demonstration of thinking about properties.
+- [x] Follow the instructions in [AuctionDemonstration](AuctionDemonstration) to have a guided exercise with a demonstration of thinking about properties.
 
 </br>
 
