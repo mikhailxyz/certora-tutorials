@@ -14,10 +14,10 @@
 
 - [x] Watch a lecture by Dr. James Wilcox on inductive reasoning for securing smart contracts - [Link](https://youtu.be/30BspXZs7q8) ([slides](Induction.pdf)).
 
-- [ ] Follow the [InductionLesson](InductionLesson) instructions to practice inductive reasoning and writing invariants in CVL.
+- [x] Follow the [InductionLesson](InductionLesson) instructions to practice inductive reasoning and writing invariants in CVL.
 
-- [ ] Read about [invariants](https://docs.certora.com/en/latest/docs/cvl/invariants.html) in Certora Prover, to learn about invariants, their implementation in CVL, and the difference between them and rules.
-- [ ] Follow the exercise in [Invariants](Invariants)
+- [x] Read about [invariants](https://docs.certora.com/en/latest/docs/cvl/invariants.html) in Certora Prover, to learn about invariants, their implementation in CVL, and the difference between them and rules.
+- [x] Follow the exercise in [Invariants](Invariants)
 
 </br>
 
@@ -27,7 +27,7 @@
 
 </br>
 
-- [ ] Continue to next lesson: [Working With Invariants](../08.Lesson_WorkingWithInvariants) to learn about preserved blocks for invariants, and practice writing rules for your properties.
+- [x] Continue to next lesson: [Working With Invariants](../08.Lesson_WorkingWithInvariants) to learn about preserved blocks for invariants, and practice writing rules for your properties.
 
 </br>
 

@@ -8,8 +8,8 @@ methods {
 
 rule uniqueManager(uint256 fundId1, uint256 fundId2, method f) {
 	require fundId1 != fundId2;
-	require getCurrentManager(fundId1) != 0 && isActiveManager(getCurrentManager(fundId1));
-	require getCurrentManager(fundId2) != 0 && isActiveManager(getCurrentManager(fundId2));
+	require getCurrentManager(fundId1) != 0 => isActiveManager(getCurrentManager(fundId1));
+	require getCurrentManager(fundId2) != 0 => isActiveManager(getCurrentManager(fundId2));
 	require getCurrentManager(fundId1) != getCurrentManager(fundId2) ;
 				
 	env e;

@@ -1,5 +1,4 @@
-Invariants
-==========
+# Invariants
 
 Invariants are an important concept for writing and reasoning about code.
 This lesson describes invariants and explains how they can be checked and used
@@ -9,12 +8,11 @@ by the Certora Prover.
 
 ---
 
-A motivating example
---------------------
+## A motivating example
 
 </br>
 
-Consider the [EnglishAuction](EnglishAuction/EnglishAuction.sol). There are the following fields of the contract 
+Consider the [EnglishAuction](EnglishAuction/EnglishAuction.sol). There are the following fields of the contract
 
 ```soldity
     address public highestBidder; //The address that bided the highest bid
@@ -25,33 +23,31 @@ Consider the [EnglishAuction](EnglishAuction/EnglishAuction.sol). There are the 
 
 A rather straightforward expected property from this system:
 
-```bids[highestBidder] == highestBid``` 
+`bids[highestBidder] == highestBid`
 
 </br>
 
 ---
 
-Is the Action code broken?
-----------------------------
+## Is the Action code broken?
 
 </br>
 
-If we run the prover, we see that it would give us a counterexample for highestBidVSBids. This invariant fails to be proven after the constructor.  However the code is correct, the constructor assign to highestBid the minimum price for the auction, every bid has to increase the highestBid.
+If we run the prover, we see that it would give us a counterexample for highestBidVSBids. This invariant fails to be proven after the constructor. However the code is correct, the constructor assign to highestBid the minimum price for the auction, every bid has to increase the highestBid.
 
 Try to fix the invariant.
 
-
-
 What about the bids of other addresses than the highestBidder?
 
-look at invariant `integrityOfHighestBid` 
+look at invariant `integrityOfHighestBid`
+
 ```
- bids(any) <= highestBid()  
+ bids(any) <= highestBid()
 ```
+
 ---
 
-Recap on Invariants
-----------
+## Recap on Invariants
 
 </br>
 
@@ -60,13 +56,13 @@ The above properties are an example of an
 
 > :warning: An [invariant](https://en.wikipedia.org/wiki/Class_invariant) is a fact about the state of the system that should always[^between_transactions] be true.
 
-[^between_transactions]: Invariants may temporarily become false within a
-  transaction, but they should be reestablished by the end of a transaction.
-  The violations should be invisible to the outside world.
+[^between_transactions]:
+    Invariants may temporarily become false within a
+    transaction, but they should be reestablished by the end of a transaction.
+    The violations should be invisible to the outside world.
 
 Invariants only describe the state of the system at a single point in time,
 they do not describe what happens as the state changes or how the system got into a particular state. If you can determine whether a statement is true by just looking at the fields and ether balances of one or more contracts, and you expect the statement to always be true, then the statement is an invariant.
-
 
 </br>
 
@@ -91,7 +87,6 @@ they do not describe what happens as the state changes or how the system got int
   Answer: Yes, and it holds, but is it a strong one? It contains states that you would consider not correct, two users had the highestbid. 
 </details>
 
-
 <details>
   <summary>Question: is "1 > 0" an invariant?</summary>
   Answer: Yes but it's a tautology.
@@ -99,18 +94,15 @@ they do not describe what happens as the state changes or how the system got int
 
 </br>
 
+- [x] Run the invariant to see the results.
 
-
-- [ ] Run the invariant to see the results.
-
-- [ ] Can you think of more invariants that should holds, just write them done
+- [x] Can you think of more invariants that should holds, just write them done
 
 </br>
 
 ---
 
-How the Prover checks invariants
---------------------------------
+## How the Prover checks invariants
 
 </br>
 
@@ -118,13 +110,13 @@ And now, it's time to reveal the trick behind the magic - **how invariants are p
 
 Invariants are being proved by following the classic two induction steps:
 
-1. ***Base Step***: Verifying the expression on the constructor.
+1.  **_Base Step_**: Verifying the expression on the constructor.
 
-2. ***Inductive Step***:
-</br>
+2.  **_Inductive Step_**:
+    </br>
     2.1 Assuming the expression holds, (in practice restricting the set of possible values to take into account by the solver).
 
-    2.2 Taking a step by applying a function and then verifying the expression on the new state by assertion.
+        2.2 Taking a step by applying a function and then verifying the expression on the new state by assertion.
 
 In practice, the Certora Prover translates the invariant into parametric rules that follow this particular structure:
 
@@ -152,5 +144,4 @@ rule translation_of_generic_invariant_body(method f, env e, uint256 a, address x
 
 Writing an invariant lets us express a complete property that covers the system from the very beginning - the constructor, in a very elegant and concise manner.
 
-In the next lesson, we will learn about ***preserved **blocks*** which add a block of code right at the beginning of the second parametric rule (the "body").
-
+In the next lesson, we will learn about **\*preserved **blocks\*\*\* which add a block of code right at the beginning of the second parametric rule (the "body").
