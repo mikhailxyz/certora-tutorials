@@ -4,7 +4,7 @@
 
 </br>
 
-As discussed in [Lesson 7](../../07.Lesson_InductiveReasoning) Certora Prover is based on inductive theory and therefor assumes all permutations of the state to achieve full coverage and provide proof that a property always holds. However, usually infeasible states (that can never occur at runtime) are also considered. There may be a violation on some of those infeasible states, thus a false negative. These violations can be eliminated by proving the set of reachable states.
+As discussed in [Lesson 7](../../07.Lesson_InductiveReasoning) Certora Prover is based on inductive theory and therefore assumes all permutations of the state to achieve full coverage and provide proof that a property always holds. However, usually infeasible states (that can never occur at runtime) are also considered. There may be a violation on some of those infeasible states, thus a false negative. These violations can be eliminated by proving the set of reachable states.
 
 In the `Manager` example, we've seen how challenging writing a rule with good coverage is. A rule with partial coverage can be successfully verified and overlook a real bug while giving a user confidence in the code, although it is flawed.
 
@@ -19,38 +19,38 @@ Or closer to the way it should be implemented:
 
 </br>
 
-![Requires](images/Requires_In_Rule.png) 
+![Requires](images/Requires_In_Rule.png)
 
 </br>
 
-> :warning: Remember, `require`ing an expression means assuming the expression ***without*** proving it.
+> :warning: Remember, `require`ing an expression means assuming the expression **_without_** proving it.
 
 Back to the two types of pre-conditions:
 
-1. The `require` in line 8 is a pre-condition that guides the Prover away from a known/uninteresting case.
-In This example, if `fundId1 == fundId2`, we get a tautology - in the assertion,  calling `getCurrentManager()` with the exact same argument value should always return the same value; therefore `assert getCurrentManager(fundId1) != getCurrentManager(fundId2)` is equivalent to `assert 1 != 1`. </br>
-We can think of this kind of pre-condition as a known restriction to the rule's validity rather than an assumption on a valid state of the contract. We essentially say: "This specification shouldn't hold for any two funds, but only for any two ***distinct*** funds". Since the Prover is over-approximating, if we weren't to require this condition, it would've given us the case where `fundId1 == fundId2` as a counter example. </br>
-These sort of assumptions **define** the coverage of the rule and can easily be too strong.</br>
-To avoid strong requiring that leads to under-approximation:
-    
-    a. Specification should be defined cautiously and with great accuracy. For example, we need to refine our specification of the rule:
+1.  The `require` in line 8 is a pre-condition that guides the Prover away from a known/uninteresting case.
+    In This example, if `fundId1 == fundId2`, we get a tautology - in the assertion, calling `getCurrentManager()` with the exact same argument value should always return the same value; therefore `assert getCurrentManager(fundId1) != getCurrentManager(fundId2)` is equivalent to `assert 1 != 1`. </br>
+    We can think of this kind of pre-condition as a known restriction to the rule's validity rather than an assumption on a valid state of the contract. We essentially say: "This specification shouldn't hold for any two funds, but only for any two **_distinct_** funds". Since the Prover is over-approximating, if we weren't to require this condition, it would've given us the case where `fundId1 == fundId2` as a counter example. </br>
+    These sort of assumptions **define** the coverage of the rule and can easily be too strong.</br>
+    To avoid strong requiring that leads to under-approximation:
 
-    > Given any 2 ***distinct*** funds, there should be a distinct manager for each of them.
+        a. Specification should be defined cautiously and with great accuracy. For example, we need to refine our specification of the rule:
 
-    b. The pre-conditions should always derive directly from the specification and only create intended coverage boundaries.
+        > Given any 2 ***distinct*** funds, there should be a distinct manager for each of them.
 
-    c. Every `require`s should have a good reason.
+        b. The pre-conditions should always derive directly from the specification and only create intended coverage boundaries.
+
+        c. Every `require`s should have a good reason.
 
 > :information_source: Frequently, these pre-conditions are local, i.e., relevant to a specific rule(s). Usually, they impose restrictions on internal CVL variables only.
 
 - [ ] Try commenting line 8 out and run a verification on the working implementation to see the counter-example.
-</br>
+      </br>
 
 2. The `require` in line 9 is a pre-condition that assumes perpetual validity of a state of the contract.
-In this example, we would've missed the bug if the contract could've gotten to the state where `address(0)` is an active manager. 
-</br>
-This is an unsafe use of a pre-condition (`require`), mainly since it is not derived by the rule's specification.. It is not a guideline to the rule that marks the boundaries of the rule's supposed coverage. Instead, it is a necessary condition that must be met for the property to hold.
-This pre-condition is a state that should hold no matter what.  Therefore, it should be proven first in form of another rule/invariant.
+   In this example, we would've missed the bug if the contract could've gotten to the state where `address(0)` is an active manager.
+   </br>
+   This is an unsafe use of a pre-condition (`require`), mainly since it is not derived by the rule's specification.. It is not a guideline to the rule that marks the boundaries of the rule's supposed coverage. Instead, it is a necessary condition that must be met for the property to hold.
+   This pre-condition is a state that should hold no matter what. Therefore, it should be proven first in form of another rule/invariant.
 
 - [ ] Search for the introduced bug in the function `createFund()` in [ManagerBug3](Manager/ManagerBug3.sol).
 
@@ -74,7 +74,7 @@ invariant exampleInvariant(uint arg1, address arg2, ...)
 
 rule exampleRule(bytes32 arg1, uint arg2, address arg3, ...){
     requireInvariant exampleInvariant(arg2, arg3);
-    
+
     ...
 
     assert exp2;
@@ -89,7 +89,7 @@ invariant exampleInvariant(uint arg1, address arg2, ...)
 
 rule exampleRule(bytes32 arg1, uint arg2, address arg3, ...){
     require exp;
-    
+
     ...
 
     assert exp2;
@@ -97,7 +97,7 @@ rule exampleRule(bytes32 arg1, uint arg2, address arg3, ...){
 ```
 
 This command allows us to build a more modular code by breaking the specification into rules and invariants that prove exactly one property. As in other programming languages, it is easier to debug and design with shorter and simpler code sections.
-If the invariant passes verification, it can be assumed quite safely in any other context. Therefore, the reserved word also helps us visually distinguish between assumptions that we didn't prove before and those with a mathematical basis.  
+If the invariant passes verification, it can be assumed quite safely in any other context. Therefore, the reserved word also helps us visually distinguish between assumptions that we didn't prove before and those with a mathematical basis.
 
 > :memo: When breaking the code to multiple invariants and rules we can find flaws in the asserts more easily, make violation investigation less tiresome, and allow ourselves to use pre-conditions in a modular and safe way.
 
@@ -119,7 +119,7 @@ The preserved block is a component that allows us to insert a handful of pre-con
 If invariants are properties of the system that are supposed to hold on their own for any combination of steps starting from the constructor, why do we need preserved blocks? There are 3 main use cases for invariants with preserved blocks:
 
 1. Invariants with preserved blocks can be thought of as invariants with asterisks - invariants that are true given certain pre-condition after the constructor. We sometimes prefer using invariants in this way over writing a rule to get a wider coverage by including the induction basis (checking the constructor). </br>
-Invariants are pretty limited in nature; however, preserved blocks allow the insertion of pre-conditions before the function call.
+   Invariants are pretty limited in nature; however, preserved blocks allow the insertion of pre-conditions before the function call.
 
 > :information_source: Rules are much more flexible than invariants. They allow multiple assert lines, specific and numerous function calls, executing additional commands post function calls, and more.
 
@@ -142,12 +142,12 @@ The general PB is a block that applies pre-conditions before each function call.
 The syntax is as follows:
 
 ```CVL
-invariant aidInv(uint x) 
+invariant aidInv(uint x)
         exp2
 
-invariant example(address user, bytes32 id) 
+invariant example(address user, bytes32 id)
     exp
-    { 
+    {
         preserved
         {
             uint a;
@@ -157,7 +157,8 @@ invariant example(address user, bytes32 id)
     }
 ```
 
-Notice the syntax - 
+Notice the syntax -
+
 - The first curly brackets are used to show the bounds of the PB's declaration.
 - There can be more than one PB, so the first curly brackets are there to bound them all.
 - Curly brackets after the `preserved` keyword bound the specific preserved block.
@@ -165,11 +166,10 @@ Notice the syntax -
 
 An additional feature of the PB is the ability to define an `env` variable within its context. The syntax is as follows:
 
-
 ```CVL
-invariant example(address user, bytes32 id) 
+invariant example(address user, bytes32 id)
     exp
-    { 
+    {
         preserved with (env e2)
         {
             ...
@@ -198,9 +198,9 @@ It is especially recommended to use this option over the general PB Whenever pos
 The syntax is as follows:
 
 ```CVL
-invariant example(address user, uint amount) 
+invariant example(address user, uint amount)
     exp
-    { 
+    {
         preserved getFunds(address user){
             require exp2;
         }
@@ -214,6 +214,7 @@ invariant example(address user, uint amount)
 ```
 
 Notice the syntax here:
+
 - The preserved keyword is followed by the function signature - name and arguments.
 
 You can write a specific PB for each function in your system if needed. For example, in Bank, we can create a preserved block for the methods getFunds(), deposit(), and withdraw().
@@ -221,7 +222,7 @@ You can write a specific PB for each function in your system if needed. For exam
 The PB allows you to constrain method arguments too. For example:
 
 ```CVL
-invariant example(env e) 
+invariant example(env e)
     exp
     {
         preserved transfer(address recipient, uint256 amount) with (env e3) {
@@ -229,6 +230,7 @@ invariant example(env e)
         }
     }
 ```
+
 - `with (env e2)` is a environment variable declaration that will be used in a method. It can have any name.
 
 </br>
@@ -244,7 +246,7 @@ One can create both a general PB and function-specific PB for the same invariant
 In the example below, when the function `transfer` is being verified, the assumption `amount > 0` will apply, but `hashId == 100` will not. For the verification of any other function, it will be vice versa.
 
 ```CVL
-invariant example(bytes32 hashId, env e) 
+invariant example(bytes32 hashId, env e)
     exp
     {
         preserved with (env e2)
@@ -266,8 +268,7 @@ invariant example(bytes32 hashId, env e)
 
 </br>
 
-- [ ] Have a look at the system [Manager](Manager) and look at the step to step to write the unique manager property as invariant, check the bugs and insert new ones to understand the coverage.  
-
+- [ ] Have a look at the system [Manager](Manager) and look at the step to step to write the unique manager property as invariant, check the bugs and insert new ones to understand the coverage.
 
 - [ ] Have a look at the system [ReserveList](ReserveList) and understand how it operates.
 
@@ -284,7 +285,7 @@ invariant example(bytes32 hashId, env e)
     </br>
 
   - [ ] There should not be a token saved at an index greater or equal to reserve counter.
-    
+
     <details>
     <summary>Hint:</summary>
     If index i is nonzero and token t is a valid address then t.id equals i iff the i-th reserve is t.</br>
@@ -294,7 +295,7 @@ invariant example(bytes32 hashId, env e)
     </br>
 
   - [ ] Id of assets is injective (i.e. different tokens should have distinct ids).
-    
+
     <details>
     <summary>Hint:</summary>
     If index i is nonzero and token t is a valid address then t.id equals i iff the i-th reserve is t.</br>
@@ -302,9 +303,8 @@ invariant example(bytes32 hashId, env e)
     </details>
 
     </br>
-    
+
   - [ ] Independency of tokens in list - removing one token from the list doesn't affect other tokens.
-    
   - [ ] Each non-view function changes reservesCount by 1.
 
 - [ ] If you're able to think of additional interesting properties implement them as well.
