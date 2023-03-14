@@ -18,7 +18,7 @@ contract Manager {
 
 
 	function createFund(uint256 fundId) public {
-		// require(msg.sender != address(0));
+		require(msg.sender != address(0));
 		require(funds[fundId].currentManager == address(0));
 		require(!isActiveManager[msg.sender]);
 		funds[fundId].currentManager = msg.sender;
@@ -31,7 +31,8 @@ contract Manager {
 		funds[fundId].pendingManager = pending;
 	}
 
-    function flipOwnership(uint256 fundId1, uint256 fundId2) public {
+    function flipOwnership(uint256 fundId1, uint256 fundId2) public {			
+				require(fundId1 != fundId2);
         address manager1 = getCurrentManager(fundId1);
         address manager2 = getCurrentManager(fundId2);
         require(isActiveManager[manager1] && isActiveManager[manager2]);

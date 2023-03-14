@@ -1,5 +1,5 @@
 certoraRun ReserveListFixed.sol:ReserveList --verify ReserveList:Reserve.spec \
---solc solc8.7 \
+--solc solc8.19 \
 --optimistic_loop \
 --loop_iter 3 \
 --msg "correlated lists broken"

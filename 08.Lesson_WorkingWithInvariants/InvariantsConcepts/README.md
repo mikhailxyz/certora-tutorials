@@ -43,7 +43,7 @@ Back to the two types of pre-conditions:
 
 > :information_source: Frequently, these pre-conditions are local, i.e., relevant to a specific rule(s). Usually, they impose restrictions on internal CVL variables only.
 
-- [ ] Try commenting line 8 out and run a verification on the working implementation to see the counter-example.
+- [x] Try commenting line 8 out and run a verification on the working implementation to see the counter-example.
       </br>
 
 2. The `require` in line 9 is a pre-condition that assumes perpetual validity of a state of the contract.
@@ -52,9 +52,9 @@ Back to the two types of pre-conditions:
    This is an unsafe use of a pre-condition (`require`), mainly since it is not derived by the rule's specification.. It is not a guideline to the rule that marks the boundaries of the rule's supposed coverage. Instead, it is a necessary condition that must be met for the property to hold.
    This pre-condition is a state that should hold no matter what. Therefore, it should be proven first in form of another rule/invariant.
 
-- [ ] Search for the introduced bug in the function `createFund()` in [ManagerBug3](Manager/ManagerBug3.sol).
+- [x] Search for the introduced bug in the function `createFund()` in [ManagerBug3](Manager/ManagerBug3.sol).
 
-- [ ] Run the spec with line 9 as in the picture above to see if a violation rises.
+- [x] Run the spec with line 9 as in the picture above to see if a violation rises.
 
 To avoid making mistakes by assuming things that can not be safely assumed, we introduce the simple concept of `requireInvariant`.
 
@@ -103,7 +103,7 @@ If the invariant passes verification, it can be assumed quite safely in any othe
 
 > :warning: Note that the code will still assume the invariant where ever it is told to, even if the invariant itself fails. Always make sure that the invariant passes correctly before assuming it.
 
-- [ ] Write the pre-condition in line 9 as an invariant and require this invariant instead of line 9. Run the verification on `ManagerBug3` to see the dissonance of failing the invariant while the rule passes.
+- [x] Write the pre-condition in line 9 as an invariant and require this invariant instead of line 9. Run the verification on `ManagerBug3` to see the dissonance of failing the invariant while the rule passes.
 
 </br>
 
@@ -181,7 +181,7 @@ It is handy for the 3rd use case discussed earlier. And it is sometimes necessar
 
 Since invariants are supposed to be true regardless of anything, including `env` context, the Prover creates and uses a unique environment within the invariant context.
 
-- [ ] Look at the "Variables" box under the violation of the invariant that failed `ManagerBug3`. You can see an `invariantEnv` was created within the invariant context.
+- [x] Look at the "Variables" box under the violation of the invariant that failed `ManagerBug3`. You can see an `invariantEnv` was created within the invariant context.
 
 </br>
 
@@ -268,13 +268,13 @@ invariant example(bytes32 hashId, env e)
 
 </br>
 
-- [ ] Have a look at the system [Manager](Manager) and look at the step to step to write the unique manager property as invariant, check the bugs and insert new ones to understand the coverage.
+- [x] Have a look at the system [Manager](Manager) and look at the step to step to write the unique manager property as invariant, check the bugs and insert new ones to understand the coverage.
 
-- [ ] Have a look at the system [ReserveList](ReserveList) and understand how it operates.
+- [x] Have a look at the system [ReserveList](ReserveList) and understand how it operates.
 
 - [ ] Try to prove the following list of properties:
 
-  - [ ] Both lists are correlated - If we use the id of a token in `reserves` to retrieve a token in `underlyingList`, we get the same toke.
+  - [x] Both lists are correlated - If we use the id of a token in `reserves` to retrieve a token in `underlyingList`, we get the same toke.
 
     <details>
     <summary>Hint:</summary>
@@ -284,7 +284,7 @@ invariant example(bytes32 hashId, env e)
 
     </br>
 
-  - [ ] There should not be a token saved at an index greater or equal to reserve counter.
+  - [x] There should not be a token saved at an index greater or equal to reserve counter.
 
     <details>
     <summary>Hint:</summary>

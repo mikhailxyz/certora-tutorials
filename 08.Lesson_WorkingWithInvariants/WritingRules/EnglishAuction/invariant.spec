@@ -33,8 +33,8 @@ methods {
 
 
 // check highestBidder correlation with highestBid from bids mapping
-invariant highestBidVSBids() 
-    bids( highestBidder()) == highestBid()
+// invariant highestBidVSBids() 
+//     bids( highestBidder()) == highestBid()
 
 
 // Nobody can have more bids than highestBid
@@ -43,5 +43,5 @@ invariant integrityOfHighestBid(address any)
 
 
 // others have less than highestBid
-invariant integrityOfHighestBid(address other) 
-    other != highestBidder() =>  bids(other) < highestBid() 
+// invariant integrityOfHighestBid(address other) 
+//     other != highestBidder() =>  bids(other) < highestBid() 

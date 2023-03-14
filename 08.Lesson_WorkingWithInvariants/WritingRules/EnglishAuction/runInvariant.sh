@@ -1,3 +1,3 @@
 certoraRun EnglishAuction.sol:EnglishAuction --verify EnglishAuction:invariant.spec \
---solc solc8.13 \
+--solc solc8.19 \
 --msg "EnglishAuction invaraints"

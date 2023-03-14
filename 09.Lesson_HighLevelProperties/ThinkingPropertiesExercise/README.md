@@ -2,15 +2,15 @@
 
 Continue with EnglishAuction:
 
-- [ ] Try to understand the principles of the given system without going into details of implementation - what it is supposed to do and what mechanism it uses.
-To do that, you can read the comments and documentation of the file, look at its global variables, and go over the functions' signatures (or the interface if it exists).
+- [x] Try to understand the principles of the given system without going into details of implementation - what it is supposed to do and what mechanism it uses.
+      To do that, you can read the comments and documentation of the file, look at its global variables, and go over the functions' signatures (or the interface if it exists).
 
 > :information_source: You can look at the implementation if you'd like to understand better how things work in the system. However, the implementation should comply with the specifications, not the other way around.
 
 </br>
 
-- [ ] Think about the properties of the system and write them down in free language - English/logic/pseudo code.
-Don't worry about writing the properties in CVL. For now, we only practice the identification of properties regardless of implementation feasibility/complexity. 
+- [x] Think about the properties of the system and write them down in free language - English/logic/pseudo code.
+      Don't worry about writing the properties in CVL. For now, we only practice the identification of properties regardless of implementation feasibility/complexity.
 
 > :memo: Give a special thought to high level properties that can prevent gran losses to the users in case they break. Go back to popsicle and give it extra thought on high level rules
 
@@ -32,9 +32,8 @@ Don't worry about writing the properties in CVL. For now, we only practice the i
 
 - [ ] Check your spec over mutations
 
-- [ ] Review the solution file to see a good coverage spec 
+- [ ] Review the solution file to see a good coverage spec
 
 </br>
-
 
 > :bulb: Thinking about properties is a process of brainstorming. It is always recommended to have a partner(s) to discuss your ideas with.

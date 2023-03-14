@@ -4,7 +4,7 @@
  */
  
  
- import "erc20.spec"
+import "erc20.spec"
 
 // Reference from the spec to additional contracts used in the verification 
 using DummyERC721A as NFT
@@ -235,7 +235,7 @@ rule noTimeToEnd(env e, method f) {
 
 
 // check correctness of bid functions:
-// 1 - if bid succeeded, the bidder should become the highestBidder and their balance should beupdated respectively
+// 1 - if bid succeeded, the bidder should become the highestBidder and their balance should be updated respectively
 // 2 - if the sum of bidder's previous bids and current bid is less than current highestBid, then bid should revert
 rule integrityOfBid(env e, method f) 
     filtered { f -> 
@@ -397,7 +397,6 @@ rule flagsAfterStart(env e, method f) {
 
 // after end(), both state flags are true 
 rule flagsAfterEnd(env e, method f) {
-
     bool isStar = started();
     bool isEnd = ended();
 
