@@ -10,6 +10,7 @@
   1 - check that current highestBidder cannot withdraw
   2 - if withdraw succeeded, then user's bids should be 0 and token balance should increase respectively
 - (from solution) highest bidder cannot withdraw
+- (From solution) At the end of auction a seller will get NFT back or get tokens
 
 - NFT token can only be transferred to the highest bidder
 
@@ -45,7 +46,8 @@
 - NFT Token address cannot be changed
 - ERC20 Token address cannot be changed
 - Seller cannot be changed
-
+- (from solution) only balance of a specific user can change after a function call
+- (from solution) system should have at least the sum of all bids to be able to payback everybody
 <!-- - the balance of a single arbitrary user should be no more than the total supply of tokens
 - (from solution) no way to delete an auction if `auctions[id].bid_expiry == 0` or `(auctions[id].bid_expiry >= now || auctions[id].end_time >= now)` -->
 

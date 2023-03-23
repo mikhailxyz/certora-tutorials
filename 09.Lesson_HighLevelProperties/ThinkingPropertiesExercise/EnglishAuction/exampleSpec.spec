@@ -1,10 +1,4 @@
-/*
-   This is a specification file for EnglishAuction's formal verification
-   using the Certora prover.
- */
- 
- 
- import "erc20.spec"
+import "erc20_methods.spec"
 
 // Reference from the spec to additional contracts used in the verification. 
 using DummyERC721A as NFT
@@ -68,7 +62,6 @@ rule integrityOfEndTime(env e) {
     end(e);
 
     assert e.block.timestamp >= endAt(), "ended before endAt"; 
-             
 }
 
 
@@ -110,6 +103,42 @@ rule monotonicityOfHighestBid(method f) {
     assert highestBid() >= before;
 }
 
+/* 
+   Property: If bids[bidder] decreased -> one of the withdrawal functions was called
+   Description: a bid can only decreased if the bidder withdraws their bid
+*/
+rule individualBidDecrease(method f, address bidder) {
+    uint bidBefore = bids(bidder);
+    
+    env e;
+    calldataarg args; 
+    f(e, args);
+
+    uint bidAfter = bids(bidder);
+    assert bidAfter < bidBefore => 
+        f.selector == withdraw().selector ||
+        f.selector == withdrawFor(address, uint).selector ||
+        f.selector == withdrawAmount(address, uint).selector;
+}
+
+/* 
+   Property: If bids[bidder] increase -> withdraw function was called
+   Description: a bid can only decreased if the bidder withdraws their bid
+*/
+rule individualBidIncrease(method f, address bidder) {
+    uint bidBefore = bids(bidder);
+    
+    env e;
+    calldataarg args; 
+    f(e, args);
+
+    uint bidAfter = bids(bidder);
+    assert bidAfter > bidBefore => 
+        f.selector == bid(uint).selector ||
+        f.selector == bidFor(address, uint).selector;
+}
+
+
 
 /****************************** 
 *       State Transition      *
@@ -141,7 +170,7 @@ rule onceEndedAlwaysEnded(method f) {
 }
 
 rule same(method f) {
-     env e;
+    env e;
     calldataarg args; 
 
     require ended();

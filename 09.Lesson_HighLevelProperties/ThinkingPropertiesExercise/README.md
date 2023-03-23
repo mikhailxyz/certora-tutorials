@@ -14,15 +14,15 @@ Continue with EnglishAuction:
 
 > :memo: Give a special thought to high level properties that can prevent gran losses to the users in case they break. Go back to popsicle and give it extra thought on high level rules
 
-    - [ ] Write the properties down in your favorite word processor and upload it with the name "<system_name>_properties_solution" to the current directory.
+    - [x] Write the properties down in your favorite word processor and upload it with the name "<system_name>_properties_solution" to the current directory.
 
 </br>
 
-- [ ] Classify each of your properties as one of the five types we defined in the presentation [Categorizing Properties](../../06.Lesson_ThinkingProperties/Categorizing_Properties.pdf).
+- [x] Classify each of your properties as one of the five types we defined in the presentation [Categorizing Properties](../../06.Lesson_ThinkingProperties/Categorizing_Properties.pdf).
 
 </br>
 
-- [ ] Prioritize your set of properties as demonstrated in the [Symbolic Pool Demonstration](../SymbolicPoolDemonstration/propertiesList.md).
+- [x] Prioritize your set of properties as demonstrated in the [Symbolic Pool Demonstration](../SymbolicPoolDemonstration/propertiesList.md).
 
 </br>
 
