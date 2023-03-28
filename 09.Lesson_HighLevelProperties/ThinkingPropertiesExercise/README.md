@@ -26,13 +26,13 @@ Continue with EnglishAuction:
 
 </br>
 
-- [ ] Start with the exampleSpec.spec file and write more properties. Focus on multi-contract
+- [x] Start with the exampleSpec.spec file and write more properties. Focus on multi-contract
 
-- [ ] Learn about [ghosts](https://docs.certora.com/en/latest/docs/cvl/ghosts.html)
+- [x] Learn about [ghosts](https://docs.certora.com/en/latest/docs/cvl/ghosts.html)
 
-- [ ] Check your spec over mutations
+- [x] Check your spec over mutations
 
-- [ ] Review the solution file to see a good coverage spec
+- [x] Review the solution file to see a good coverage spec
 
 </br>
 

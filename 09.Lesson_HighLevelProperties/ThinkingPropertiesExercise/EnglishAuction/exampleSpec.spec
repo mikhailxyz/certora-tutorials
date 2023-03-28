@@ -138,6 +138,27 @@ rule individualBidIncrease(method f, address bidder) {
         f.selector == bidFor(address, uint).selector;
 }
 
+rule onlyStartCanStart(method f) {
+    env e;
+    calldataarg args; 
+
+    bool startedBefore = started();
+    f(e, args);
+    bool startedAfter = started();
+
+    assert !startedBefore && startedAfter => f.selector == start().selector, "Method different than start started the auction";
+}
+
+rule canOnlyStartIfOwnsNFT(method f) {
+    env e;
+    calldataarg args; 
+
+    f(e, args);
+    bool ownsNFT = NFT.ownerOf(nftId()) == e.msg.sender;
+
+    assert !ownsNFT => f.selector != start().selector, "Method different than start started the auction";
+}
+
 
 
 /****************************** 

@@ -11,19 +11,7 @@ methods{
     burn(address, uint256)
 }    
 
-// sum of 2 accounts' balances cannot be less than a single one of them
-invariant twoBalancesGreaterThanSingle(address account1, address account2)
-    balanceOf(account1) + balanceOf(account2) < balanceOf(account1) => false
-    
-// common mistake - not before and after
-invariant twoBalancesGreaterThanSingleProb(address account1, address account2)
-    balanceOf(account1) + balanceOf(account2) <= balanceOf(account1) + balanceOf(account2)
 
-// totalSupply & user's balance ratios
-invariant balanceRatios(address account1, address account2)
-    totalSupply() == balanceOf(account1) + balanceOf(account2) =>
-        (( balanceOf(account1) + balanceOf(account2) == 0 ) =>
-            totalSupply() + balanceOf(account1) >= balanceOf(account2) )
 
 /* 
  * Try to think about how we can check if this rule is a tautology.
@@ -105,4 +93,5 @@ rule mintBurnInverse(address user, uint256 amount) {
     uint256 balanceAfter = balanceOf(user);
     assert balanceBefore == balanceAfter;
 }
+
 

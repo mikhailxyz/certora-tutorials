@@ -10,12 +10,9 @@ High-level properties are usually implemented as invariants or parametric rules,
 
 - [x] Go over [SymbolicPoolDemonstratione](SymbolicPoolDemonstration) to learn about multi-contract verification and exercise some more on coming up with properties, categorizing them, and prioritizing them.
 
-- [ ] Follow the instructions on [Thinking Properties Exercise](ThinkingPropertiesExercise) to exercise writing a full spec.
-
-
+- [x] Follow the instructions on [Thinking Properties Exercise](ThinkingPropertiesExercise) to exercise writing a full spec.
 
 </br>
-
 
 ---
 

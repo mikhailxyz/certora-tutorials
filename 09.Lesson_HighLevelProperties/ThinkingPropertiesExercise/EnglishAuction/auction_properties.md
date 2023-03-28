@@ -19,6 +19,7 @@
 - Monotonicity of the highest bid
 - bids[bidder] decreased -> withdraw function was called
 - bids[bidder] increased -> deposit function was called
+- 2 - if the auction was started, start() was called
 <!-- - Payment remains constant for a given auction
 - total supply goes up only
 - can be only closed through `close()` method
@@ -30,7 +31,6 @@
 - (from solution) once ended, always remains ended
 - (from solution)// started iff contract holds nft:
 1 - if start() succeeded, auction contract must hold NFT
-2 - if the auction was started, start() was called
 <!-- - If not created, getAuction() returns all 0s
 - If created, getAuction() returns all non-0s -->
 

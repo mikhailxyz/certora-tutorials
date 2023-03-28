@@ -14,6 +14,7 @@ We will go through a few methods that should be applied after verifying a rule/i
 ## Catching Vacuity Caused By Under-Approximation
 
 ---
+
 ## MethodsVacuityCheck Rule
 
 </br>
@@ -31,9 +32,9 @@ rule MethodsVacuityCheck(method f) {
 This rule calls every function in the contract and then `assert false`. It tries to capture vacuous **functions** in the contract.
 The results we get should always be thumbs down since assert false will always throw a violation. However, if the contract itself has a function that reverts every time it's being called regardless of input, then the function is vacuous, alerting the developers (because it does nothing).
 
-- [ ] Create a `.spec` file named "Sanity" and write the `MethodsVacuityCheck` rule. Run a verification against [ERC20Fixed.sol](ERC20/ERC20Fixed.sol) and [ERC20Bug1.sol](ERC20/ERC20Bug1.sol).
+- [x] Create a `.spec` file named "Sanity" and write the `MethodsVacuityCheck` rule. Run a verification against [ERC20Fixed.sol](ERC20/ERC20Fixed.sol) and [ERC20Bug1.sol](ERC20/ERC20Bug1.sol).
 
-- [ ] Find the bug in `ERC20Bug1`, fix it, and rerun the verification to verify that you get an all thumbs down result.
+- [x] Find the bug in `ERC20Bug1`, fix it, and rerun the verification to verify that you get an all thumbs down result.
 
 > :bulb: Remember, when running a sanity rule, we want to see an all-failing results report.
 
@@ -45,7 +46,7 @@ The results we get should always be thumbs down since assert false will always t
 
 </br>
 
-Once a rule/invariant we've written has passed, we should use either of the following two methods to check it's not vacuous. 
+Once a rule/invariant we've written has passed, we should use either of the following two methods to check it's not vacuous.
 
 ### Adding `assert false`
 
@@ -68,13 +69,13 @@ Both vacuity checking methods are equally as good. Since the `--rule_sanity` fla
 
 - Manual addition of an `assert false` require tweaking the spec file and firing two runs but shows a counter example. Since only values that pass our original asserts should get to the assert false, we can see and investigate an example of a valid set of variables.
 
-- `--rule_sanity` mashes all the data together and saves the need to alter the code and run the tool multiple times. However, as this is still an evolving feature, its indicator can still be confusing, and it does not show a counter example. 
+- `--rule_sanity` mashes all the data together and saves the need to alter the code and run the tool multiple times. However, as this is still an evolving feature, its indicator can still be confusing, and it does not show a counter example.
 
 Soon enough, `--rule_sanity` will implement the missing features and be the method of choice, so stay tuned to new feature releases and fixes.
 
-</br> 
+</br>
 
---- 
+---
 
 ## Catching Vacuity Caused by Tautology
 
@@ -83,7 +84,7 @@ Soon enough, `--rule_sanity` will implement the missing features and be the meth
 Adding an `assert false` as the last line of invariants is syntactically impossible in CVL.
 What we can do is generate a rule that has exactly 1 line in it - `assert exp`:
 
-``` CVL
+```CVL
 invariant vacuousInvariant(uint x, address y)
     exp
 
@@ -122,12 +123,12 @@ This method will catch vacuity caused by both tautology and under-approximation.
 
 </br>
 
-- [ ] Read the entire `"Simple Map"` example from the documentation. - [Link](https://docs.certora.com/en/latest/docs/user-guide/map/simple.html). Focus in particular on the option of calling a function `@withrevert` and the corresponding storage data of `lastReverted`.
+- [x] Read the entire `"Simple Map"` example from the documentation. - [Link](https://docs.certora.com/en/latest/docs/user-guide/map/simple.html). Focus in particular on the option of calling a function `@withrevert` and the corresponding storage data of `lastReverted`.
 
-- [ ] Read the common pitfalls article on vacuity [Link](https://docs.certora.com/en/latest/docs/confluence/pitfalls.html?highlight=lastreverted#lastreverted-updates).
+- [x] Read the common pitfalls article on vacuity [Link](https://docs.certora.com/en/latest/docs/confluence/pitfalls.html?highlight=lastreverted#lastreverted-updates).
 
-- [ ] Go over the rules and invariants in [ERCVacuity](ERC20/ERCVacuity.spec). Use the methods you've just learned to determine if they are vacuous rules.
- 
+- [] Go over the rules and invariants in [ERCVacuity](ERC20/ERCVacuity.spec). Use the methods you've just learned to determine if they are vacuous rules.
+
 - [ ] Go back to the `.spec` files that you've written for the `Spartan Protocol` and `Popsicle Finance`, and look at them with a new point of view. Try to apply the methods we've learned in this lesson to check whether you've written any vacuous rules and invariants.
 
 - [ ] If you did write vacuous rules, try to rethink if the rules make sense in the first place. If they do, fix them.
