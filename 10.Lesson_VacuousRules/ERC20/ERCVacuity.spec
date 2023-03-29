@@ -30,45 +30,6 @@ rule increaseAllowanceIntegrity(address spender, uint256 amount){
     assert false, "increaseAllowanceIntegrity has non reverting path";
 }
 
-// Checks if the correctness of power balance between 2 users is kept.
-rule transferOutDoesNotChangePowerBalance(address user1, address user2, address user3, uint256 amount){
-    env e; calldataarg args;
-    uint256 _balance1; uint256 _balance2;
-    require _balance1 == balanceOf(user1);
-    require e.msg.sender == user1;
-    require _balance2 == balanceOf(user1);
-    require _balance1 < _balance2;
-    
-    transfer(e, user3, amount);
-
-    uint256 balance1_ = balanceOf(user1);
-    uint256 balance2_ = balanceOf(user2);
-
-    assert balance1_ < balance2_;
-}
-
-/* Hint: 
- * lastReverted stores information on the last function call only
-*/
-rule lastRevertedExample(address sender, address recipiecnt, uint256 amount){
-    env e;
-    uint256 _allownce = allowance(sender, recipiecnt);
-    transferFrom@withrevert(e, sender, recipiecnt, amount);
-    uint256 allownce_ = allowance(sender, recipiecnt);
-
-    assert lastReverted => _allownce < amount;
-}
-
-
-rule ownerChange(address currentOwner, address user){
-    env e; calldataarg args; method f;
-    address ownerBefore = _owner(e);
-    require currentOwner == ownerBefore && user != currentOwner;
-    f(e, args);
-    address ownerAfter = _owner(e);
-    assert ownerAfter != currentOwner || ownerAfter != user;
-}
-
 // checks that each function changes balance of at most one user
 rule balanceOfChange(method f, address user1, address user2) {
     uint256 balanceOf1Before = balanceOf(user1);

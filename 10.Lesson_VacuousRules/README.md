@@ -127,11 +127,11 @@ This method will catch vacuity caused by both tautology and under-approximation.
 
 - [x] Read the common pitfalls article on vacuity [Link](https://docs.certora.com/en/latest/docs/confluence/pitfalls.html?highlight=lastreverted#lastreverted-updates).
 
-- [] Go over the rules and invariants in [ERCVacuity](ERC20/ERCVacuity.spec). Use the methods you've just learned to determine if they are vacuous rules.
+- [x] Go over the rules and invariants in [ERCVacuity](ERC20/ERCVacuity.spec). Use the methods you've just learned to determine if they are vacuous rules.
 
-- [ ] Go back to the `.spec` files that you've written for the `Spartan Protocol` and `Popsicle Finance`, and look at them with a new point of view. Try to apply the methods we've learned in this lesson to check whether you've written any vacuous rules and invariants.
+- [x] Go back to the `.spec` files that you've written for the `Spartan Protocol` and `Popsicle Finance`, and look at them with a new point of view. Try to apply the methods we've learned in this lesson to check whether you've written any vacuous rules and invariants.b
 
-- [ ] If you did write vacuous rules, try to rethink if the rules make sense in the first place. If they do, fix them.
+- [x] If you did write vacuous rules, try to rethink if the rules make sense in the first place. If they do, fix them.
 
 </br>
 
@@ -141,7 +141,7 @@ This method will catch vacuity caused by both tautology and under-approximation.
 
 </br>
 
-- [ ] Continue to the next lesson: [Loops](../11.Lesson_Loops) to learn about the complexity of handling loops and ways to approach it.
+- [x] Continue to the next lesson: [Loops](../11.Lesson_Loops) to learn about the complexity of handling loops and ways to approach it.
 
 </br>
 

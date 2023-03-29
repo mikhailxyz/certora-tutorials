@@ -14,11 +14,11 @@ rule slow_copy_wrong(uint n) {
 }
 
 // const_loop always returns 5
-rule const_loop_correct(){
+rule const_loop_correct() {
     assert const_loop() == 5, "The function returned a value other than 5";
 }
 
 // This rule should fail as const_loop should always return 5
-rule const_loop_wrong(){
+rule const_loop_wrong() {
     assert const_loop() == 3, "The function returned a value other than 3";
 }

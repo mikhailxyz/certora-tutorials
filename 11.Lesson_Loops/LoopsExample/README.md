@@ -2,9 +2,9 @@
 
 In this example we will play with the flags `--optimistic_loop` and `--loop_iter`, and see how different settings for handling loops can change the verification result of the exact same rule on the exact same function.
 
-- [ ] Have a look at [Loops.sol](Loops.sol) and [LoopsUnrolling.spec](LoopsUnrolling.spec)
+- [x] Have a look at [Loops.sol](Loops.sol) and [LoopsUnrolling.spec](LoopsUnrolling.spec)
 
-- [ ] Run the `.spec` file with the script [verifyLoops.sh](verifyLoops.sh) and see the results.
+- [x] Run the `.spec` file with the script [verifyLoops.sh](verifyLoops.sh) and see the results.
 
 <details>
   <summary>Question: Do you understand why all 4 rules fail?</summary>
@@ -13,8 +13,8 @@ In this example we will play with the flags `--optimistic_loop` and `--loop_iter
 
 </br>
 
-- [ ] If we were to add `--optimistic_loop` flag to `slow_copy_correct`, can you predict what the results would be?
-Change the script and check your prediction.
+- [x] If we were to add `--optimistic_loop` flag to `slow_copy_correct`, can you predict what the results would be?
+      Change the script and check your prediction.
 
 <details>
   <summary>Question: Do you understand why this rule passed?</summary>
@@ -24,8 +24,7 @@ Change the script and check your prediction.
 </br>
 
 - [ ] If we were to add `--optimistic_loop` flag to `slow_copy_wrong`, can you predict what the results would be?
-Change the script and check your prediction.
-
+      Change the script and check your prediction.
 
 <details>
   <summary>Question: Do you understand why this rule failed?</summary>
@@ -56,7 +55,7 @@ Change the script and check your prediction.
 Now we move to the constant iteration loop and do the entire procedure all over again. The rules failed when ran with neither `--optimistic_loop` nor `--loop_iter`.
 
 - [ ] If we were to add `--loop_iter` flag to `const_loop_correct`, can you predict what the results would be?
-Change the script and run it with value 3, 5, 10 for the `loop_iter` to check your prediction.
+      Change the script and run it with value 3, 5, 10 for the `loop_iter` to check your prediction.
 
 <details>
   <summary>Question: Do you understand why both rule failed/passed with each value of `loop_iter`?</summary>
@@ -67,7 +66,7 @@ Change the script and run it with value 3, 5, 10 for the `loop_iter` to check yo
 </br>
 
 - [ ] If we were to add `--loop_iter` flag to `const_loop_wrong`, can you predict what the results would be?
-Change the script and run it with value 3, 5, 10 for the `loop_iter` to check your prediction.
+      Change the script and run it with value 3, 5, 10 for the `loop_iter` to check your prediction.
 
 <details>
   <summary>Question: Do you understand why both rule failed for all values of `loop_iter`?</summary>
@@ -114,4 +113,4 @@ There are 2 things to keep in mind when playing with the flags:
 2. usually cannot just raise the `--loop_iter` as much as we'd like, even if we have a hard limit on the loop (like the constant loop). Unrolling adds complexity which will rise the runtime of your specification.
 
 Be clever with the use of loops flags.
-On a parametric loop, it is often enough to check a small number of iterations to verify the entire rule (or at least give a very good coverage). 
+On a parametric loop, it is often enough to check a small number of iterations to verify the entire rule (or at least give a very good coverage).
