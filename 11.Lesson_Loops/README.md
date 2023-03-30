@@ -20,11 +20,11 @@ As we mentioned before, the Certora Prover does not run in the traditional sense
 
 </br>
 
-- [ ] Go over the interactive example in [Loops Example](LoopsExample) to see how the flags `--optimistic_loop` and `--loop_iter` work on simple cases and learn the danger of wrong flagging.
+- [x] Go over the interactive example in [Loops Example](LoopsExample) to see how the flags `--optimistic_loop` and `--loop_iter` work on simple cases and learn the danger of wrong flagging.
 
 </br>
 
-- [ ] Follow the instructions on [BankLoops](BankLoops) to exercise loop handling with correct use of `--optimistic_loop` and `--loop_iter`.
+- [x] Follow the instructions on [BankLoops](BankLoops) to exercise loop handling with correct use of `--optimistic_loop` and `--loop_iter`.
 
 </br>
 
@@ -34,7 +34,7 @@ As we mentioned before, the Certora Prover does not run in the traditional sense
 
 </br>
 
-- [ ] Continue to the next lesson: [Multi Contract](../12.Lesson_MultiContract) to learn how to verify contracts that interact with other contracts.
+- [x] Continue to the next lesson: [Multi Contract](../12.Lesson_MultiContract) to learn how to verify contracts that interact with other contracts.
 
 </br>
 

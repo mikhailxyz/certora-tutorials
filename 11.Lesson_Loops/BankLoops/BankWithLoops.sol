@@ -45,7 +45,7 @@ contract Bank {
 	function multiTransferWithBug(address[] memory tos, uint256 amount) public {
 		uint256 totalToReduce = 0;
 		for(uint256 i ; i < tos.length ; i++ ){
-			totalToReduce = amount;
+			totalToReduce = totalToReduce.safeAdd(amount);
 			funds[tos[i]] = funds[tos[i]].safeAdd(amount);
 		}
 		funds[msg.sender] = funds[msg.sender].safeSub(totalToReduce);

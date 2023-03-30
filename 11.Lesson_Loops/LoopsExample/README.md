@@ -23,7 +23,7 @@ In this example we will play with the flags `--optimistic_loop` and `--loop_iter
 
 </br>
 
-- [ ] If we were to add `--optimistic_loop` flag to `slow_copy_wrong`, can you predict what the results would be?
+- [x] If we were to add `--optimistic_loop` flag to `slow_copy_wrong`, can you predict what the results would be?
       Change the script and check your prediction.
 
 <details>
@@ -33,7 +33,7 @@ In this example we will play with the flags `--optimistic_loop` and `--loop_iter
 
 </br>
 
-- [ ] If we were to add `--loop_iter` flag with a larger number of loop unrolling what would've happen? Try running the last 2 runs (with the `--optimistic_loop`) using `--loop_iter` with values 3, 5 ,10.
+- [x] If we were to add `--loop_iter` flag with a larger number of loop unrolling what would've happen? Try running the last 2 runs (with the `--optimistic_loop`) using `--loop_iter` with values 3, 5 ,10.
 
 <details>
   <summary>Question: Do you understand the results?</summary>
@@ -43,7 +43,7 @@ In this example we will play with the flags `--optimistic_loop` and `--loop_iter
 
 </br>
 
-- [ ] Now say that we were to remove the `--optimistic_loop` and keep the 3, 5, 10 `--loop_iter`, what will be the results? Try it.
+- [x] Now say that we were to remove the `--optimistic_loop` and keep the 3, 5, 10 `--loop_iter`, what will be the results? Try it.
 
 <details>
   <summary>Question: Do you understand why both rules failed?</summary>
@@ -54,7 +54,7 @@ In this example we will play with the flags `--optimistic_loop` and `--loop_iter
 
 Now we move to the constant iteration loop and do the entire procedure all over again. The rules failed when ran with neither `--optimistic_loop` nor `--loop_iter`.
 
-- [ ] If we were to add `--loop_iter` flag to `const_loop_correct`, can you predict what the results would be?
+- [x] If we were to add `--loop_iter` flag to `const_loop_correct`, can you predict what the results would be?
       Change the script and run it with value 3, 5, 10 for the `loop_iter` to check your prediction.
 
 <details>
@@ -65,7 +65,7 @@ Now we move to the constant iteration loop and do the entire procedure all over 
 
 </br>
 
-- [ ] If we were to add `--loop_iter` flag to `const_loop_wrong`, can you predict what the results would be?
+- [x] If we were to add `--loop_iter` flag to `const_loop_wrong`, can you predict what the results would be?
       Change the script and run it with value 3, 5, 10 for the `loop_iter` to check your prediction.
 
 <details>
@@ -75,7 +75,7 @@ Now we move to the constant iteration loop and do the entire procedure all over 
 
 </br>
 
-- [ ] If we were to add `--optimistic_loop` flag what would've happen? Try running the last 2 runs (with the `--loop_iter` 3, 5 ,10).
+- [x] If we were to add `--optimistic_loop` flag what would've happen? Try running the last 2 runs (with the `--loop_iter` 3, 5 ,10).
 
 <details>
   <summary>Question: Do you understand the results?</summary>
@@ -86,9 +86,9 @@ Now we move to the constant iteration loop and do the entire procedure all over 
 
 </br>
 
-- [ ] Try running the previous runs again, this time with an `assert false` at the end of each rule.
+- [x] Try running the previous runs again, this time with an `assert false` at the end of each rule.
 
-- [ ] Now remove the `assert false`, `--loop_iter` and keep the `--optimistic_loop`, what will be the results? Try it.
+- [x] Now remove the `assert false`, `--loop_iter` and keep the `--optimistic_loop`, what will be the results? Try it.
 
 <details>
   <summary>Question: Do you understand the rules?</summary>
