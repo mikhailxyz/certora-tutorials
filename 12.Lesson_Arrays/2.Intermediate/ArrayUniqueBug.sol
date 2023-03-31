@@ -25,6 +25,7 @@ contract ArrayUniqueBug {
     }
 
     function set(uint index, address value) public {
+        require(frequency(value) == 0, "value already exists");
         require(index < arrOfTokens.length, "index out of bound");
         arrOfTokens[index] = value;
     }
@@ -37,6 +38,7 @@ contract ArrayUniqueBug {
     }
 
     function push(address val) public {
+        require(frequency(val) == 0, "value already exists");
         // Append to array
         // This will increase the array length by 1.
         arrOfTokens.push(val);

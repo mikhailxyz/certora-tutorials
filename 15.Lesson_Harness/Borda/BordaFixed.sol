@@ -30,7 +30,7 @@ contract Borda is IBorda {
     // current max points 
     uint256 pointsOfWinner; 
 
-    constructor() public {
+    constructor()  {
         winner = address(0);
         pointsOfWinner = 0;
     }

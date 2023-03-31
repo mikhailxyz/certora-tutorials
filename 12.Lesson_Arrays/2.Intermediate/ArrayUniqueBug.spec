@@ -12,7 +12,7 @@ methods {
 
 
 invariant uniqueArray(uint256 i, uint256 j) 
-    i != j => (xxx
+    i != j => (
         (getWithDefaultValue(i) != getWithDefaultValue(j)) ||
 		((getWithDefaultValue(i) == 0) && (getWithDefaultValue(j) == 0))
 	)
